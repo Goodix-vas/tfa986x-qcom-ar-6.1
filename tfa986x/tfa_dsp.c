@@ -3263,7 +3263,7 @@ enum tfa_error tfa_dev_start(struct tfa_device *tfa,
 		goto tfa_dev_start_exit;
 	}
 
-	/* Get currentprofile */
+	/* Get current profile */
 	active_profile = tfa_dev_get_swprof(tfa);
 	if (active_profile == 0xff)
 		active_profile = -1;
@@ -3282,6 +3282,7 @@ enum tfa_error tfa_dev_start(struct tfa_device *tfa,
 
 	if (tfa->mtpex == -1)
 		tfa_dev_mtp_get(tfa, TFA_MTP_EX);
+	cal_ready &= (tfa->disable_auto_cal) ? 0 : 1;
 	if (cal_ready) {
 		if (!tfa->is_probus_device) {
 			pr_info("%s: set cold by force in non-probus case\n",
