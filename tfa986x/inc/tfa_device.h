@@ -215,7 +215,7 @@ struct tfa_device {
 
 #define TFA_INCHANNEL(idx) \
 	(((idx % MAX_CHANNELS) == 0) ? INDEX_0 : INDEX_1)
-#if defined(TFA_STEREO_NODE)
+#if 1 /* defined(TFA_STEREO_NODE) */
 /* stereo */
 /* ref. device order in container file */
 /* confirmed by customer on 07/19/2022 v3 */

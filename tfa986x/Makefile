@@ -9,9 +9,9 @@ TFA_VERSION              =tfa986x
 TFA_USE_TFA_CLASS        =1
 TFA_USE_TFACAL_NODE      =1
 TFA_USE_TFASTC_NODE      =1
-ifeq ($(CONFIG_TFA_STEREO_NODE),y)
+#ifeq ($(CONFIG_TFA_STEREO_NODE),y)
 TFA_STEREO_NODE          =1
-endif
+#endif
 
 TFA98XX_FLAGS            := -DUSE_TFA9866 -DUSE_TFA9865 -DUSE_TFA986X
 ifeq ($(CONFIG_PLATFORM_QUALCOMM),y)
@@ -21,9 +21,9 @@ endif
 # cc flags
 #ccflags-y              := -DDEBUG
 ccflags-y               += -Werror
-ifdef TFA_STEREO_NODE
+#ifdef TFA_STEREO_NODE
 ccflags-y               += -DTFA_STEREO_NODE
-endif
+#endif
 
 # objs
 snd-soc-tfa98xx-objs    := tfa98xx.o
