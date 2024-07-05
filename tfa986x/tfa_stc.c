@@ -84,7 +84,7 @@ static ssize_t power_state_store(struct device *dev,
 	return size;
 }
 
-#if 1 /* defined(TFA_STEREO_NODE) */
+#if defined(CONFIG_TFA_STEREO_NODE)
 static ssize_t power_state_r_show(struct device *dev,
 	struct device_attribute *attr, char *buf)
 {
@@ -121,7 +121,7 @@ static ssize_t power_state_r_store(struct device *dev,
 
 	return size;
 }
-#endif /* TFA_STEREO_NODE */
+#endif /* CONFIG_TFA_STEREO_NODE */
 
 int tfa98xx_stc_init(struct class *tfa_class)
 {
