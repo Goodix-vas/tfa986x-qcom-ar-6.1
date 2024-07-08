@@ -21,13 +21,13 @@ static ssize_t power_state_store(struct device *dev,
 	struct device_attribute *attr, const char *buf, size_t size);
 static DEVICE_ATTR_RW(power_state);
 
-#if 1 /* defined(TFA_STEREO_NODE) */
+#if defined(CONFIG_TFA_STEREO_NODE)
 static ssize_t power_state_r_show(struct device *dev,
 	struct device_attribute *attr, char *buf);
 static ssize_t power_state_r_store(struct device *dev,
 	struct device_attribute *attr, const char *buf, size_t size);
 static DEVICE_ATTR_RW(power_state_r);
-#endif /* TFA_STEREO_NODE */
+#endif /* CONFIG_TFA_STEREO_NODE */
 
 static struct attribute *tfa_stc_attr[] = {
 	&dev_attr_power_state.attr,
