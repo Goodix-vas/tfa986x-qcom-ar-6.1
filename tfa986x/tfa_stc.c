@@ -31,9 +31,9 @@ static DEVICE_ATTR_RW(power_state_r);
 
 static struct attribute *tfa_stc_attr[] = {
 	&dev_attr_power_state.attr,
-#if 1 /* defined(TFA_STEREO_NODE) */
+#if defined(CONFIG_TFA_STEREO_NODE) */
 	&dev_attr_power_state_r.attr,
-#endif /* TFA_STEREO_NODE */
+#endif /* CONFIG_TFA_STEREO_NODE */
 	NULL,
 };
 
